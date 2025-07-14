@@ -6,8 +6,14 @@ class GPTClient:
         openai.api_key = OPENAI_API_KEY
 
     def generate_checkin_script(self, date_str: str) -> str:
-        """
-        Build and send a prompt to GPT-4, returning the check-in text.
-        """
+        """Build and send a prompt to GPT-4, returning the check-in text."""
         # TODO: implement prompt template and API call
         return "GPT-generated script"
+
+    def chat(self, text: str) -> str:
+        """Send text to ChatGPT and return the reply."""
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": text}],
+        )
+        return response.choices[0].message["content"].strip()

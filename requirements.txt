@@ -2,3 +2,5 @@ openai
 requests
 tkinter       # usually included with Python
 playsound     # or pygame
+sounddevice
+soundfile
